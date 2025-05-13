@@ -1,0 +1,12 @@
+# Read input and convert to sets
+m = int(input())
+a = set(map(int, input().split()))
+n = int(input())
+b = set(map(int, input().split()))
+
+# Compute symmetric difference and sort the result
+symmetric_diff = sorted(a.symmetric_difference(b))
+
+# Print each element on a new line
+for num in symmetric_diff:
+    print(num)
