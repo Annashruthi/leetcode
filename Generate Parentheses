@@ -1,0 +1,18 @@
+class Solution(object):
+    def generateParenthesis(self, n):
+        """
+        :type n: int
+        :rtype: List[str]
+        """
+        def paranth(curr,op,cl):
+            if len(curr) == n*2:
+                res.append(curr[:])
+                return
+            
+            if op<n:
+                paranth(curr+'(',op+1,cl)
+            if cl<op:
+                paranth(curr+')',op,cl+1)
+        res = []
+        paranth("",0,0)
+        return res
